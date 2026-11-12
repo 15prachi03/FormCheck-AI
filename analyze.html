@@ -1,0 +1,22 @@
+{% extends "base.html" %}{% block title %}New analysis · FormCheck AI{% endblock %}{% block crumb %}New analysis{% endblock %}
+{% block content %}
+<div class="page-intro"><span class="eyebrow">START A VERIFICATION</span><h1>New document analysis</h1><p>Upload one document for field validation or two documents to compare information.</p></div>
+<div class="analysis-layout">
+<section class="surface upload-surface">
+  <div class="surface-heading"><div><span class="step-label">STEP 01</span><h2>Upload your documents</h2><p>Choose up to two files for verification.</p></div><div class="heading-icon">↑</div></div>
+  <form id="uploadForm">
+    <label class="dropzone" id="dropzone" for="documents"><div class="upload-cloud">↑</div><h3>Drag and drop your files here</h3><p>or <b>browse files</b> from your device</p><small>PDF, PNG, JPG or JPEG · Maximum 2 files · 15 MB each</small></label>
+    <input type="file" id="documents" name="documents" accept=".pdf,.png,.jpg,.jpeg" multiple hidden>
+    <div id="fileList" class="file-list"></div>
+    <div class="privacy-note">▣ Your files are processed for analysis and are not stored as original uploads.</div>
+    <button type="submit" class="button button-primary full-button" id="analyzeBtn">✦ Analyze documents <span>→</span></button>
+  </form>
+  <div id="analysisProgress" class="progress-note hidden"><span class="spinner"></span> Extracting and validating document information…</div>
+</section>
+<aside class="surface guide-surface"><span class="eyebrow">WHAT HAPPENS NEXT</span><h2>From upload to insight.</h2>
+  <div class="guide-step"><span>01</span><div><b>Upload documents</b><p>Select a PDF or image file from your device.</p></div></div>
+  <div class="guide-step"><span>02</span><div><b>OCR extracts details</b><p>Text recognition identifies names, dates, email and phone details.</p></div></div>
+  <div class="guide-step"><span>03</span><div><b>Validation & comparison</b><p>Required fields and document-to-document differences are checked.</p></div></div>
+  <div class="guide-callout"> <b>Tip</b><p>For the best results, upload clear, readable scans with the full document visible.</p></div>
+</aside></div>
+{% endblock %}
